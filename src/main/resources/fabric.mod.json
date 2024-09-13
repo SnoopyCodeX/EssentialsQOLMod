@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "essentialsqolmod",
+  "version": "${version}",
+  "name": "EssentialsQOLMod",
+  "description": "Essentials QOL mod is a simple mod which adds a variety of helpful new commands and features to minecraft",
+  "authors": [
+    "SnoopyCodeX"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/essentialsqolmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+
+    ],
+    "main": [
+      "ph.snoopycodex.essentialsqolmod.EssentialsQOLMod"
+    ]
+  },
+  "mixins": [
+    "essentialsqolmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "fabric-permissions-api-v0": "*"
+  }
+}

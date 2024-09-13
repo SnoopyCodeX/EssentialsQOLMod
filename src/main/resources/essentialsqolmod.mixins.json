@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ph.snoopycodex.essentialsqolmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "Commands_customCommandsMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
