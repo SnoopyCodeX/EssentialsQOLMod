@@ -2,7 +2,7 @@
 
 ## Essentials QOL (Quality of Life) mod
 
-Essentials QOL mod is a simple mod which adds a variety of helpful new commands and features to minecraftEssentials QOL mod is a simple mod which adds a variety of helpful new commands and features to minecraft.
+Essentials QOL mod is a simple mod which adds a variety of helpful new commands and features to minecraft.
 
 ### Commands
 
