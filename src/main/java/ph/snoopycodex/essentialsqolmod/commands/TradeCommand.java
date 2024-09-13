@@ -33,7 +33,6 @@ public class TradeCommand extends BaseCustomCommand {
     @Override
     public void registerCommand(CommandDispatcher<CommandSourceStack> dispatcher, Commands.CommandSelection commandSelection, CommandBuildContext buildContext) {
         LiteralArgumentBuilder<CommandSourceStack> command = literal("trade")
-            .requires(source -> source.hasPermission(2))
             .then(argument("villagerEntity", EntityArgument.entity())
                 .then(literal("add")
                     .then(argument("buyItem", ItemArgument.item(buildContext))
@@ -86,7 +85,9 @@ public class TradeCommand extends BaseCustomCommand {
             );
 
         if (FabricLoader.getInstance().isModLoaded("luckperms")) {
-            command.requires(Permissions.require("%s".formatted(EssentialsQOLMod.MOD_ID) + ".commands.trade"));
+            command.requires(Permissions.require(EssentialsQOLMod.MOD_ID + ".commands.trade", 2));
+        } else {
+            command.requires(source -> source.hasPermission(2));
         }
 
         dispatcher.register(command);
