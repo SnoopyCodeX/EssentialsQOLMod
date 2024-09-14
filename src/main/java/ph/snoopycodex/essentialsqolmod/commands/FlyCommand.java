@@ -65,7 +65,7 @@ public class FlyCommand extends BaseCustomCommand {
         if (!Permissions.check(Objects.requireNonNull(source.getEntity()), EssentialsQOLMod.MOD_ID + ".commands.fly", 2) && targetEntity == null) {
             Messenger.m(source, "r You have no permission to use this command!");
             return 0;
-        } else if (!Permissions.check(Objects.requireNonNull(source.getEntity()), EssentialsQOLMod.MOD_ID + ".commands.fly.others", 2) && targetEntity != null) {
+        } else if (!Permissions.check(Objects.requireNonNull(source.getEntity()), EssentialsQOLMod.MOD_ID + ".commands.fly.others", 2) && targetEntity != null && !targetEntity.getUUID().equals(source.getEntity().getUUID())) {
             Messenger.m(source, "r You have no permission to enable/disable flight for others!");
             return 0;
         }
@@ -87,6 +87,11 @@ public class FlyCommand extends BaseCustomCommand {
         } else if (!player.getAbilities().mayfly && !enable) {
             Messenger.m(source, targetEntity == null ? "r Flight is already disabled!" : "r Flight is already disabled for %s!".formatted(player.getName().getString()));
             return 0;
+        }
+
+        // Disable player's `flying` state when flight is disabled
+        if (player.getAbilities().mayfly && !enable) {
+            player.getAbilities().flying = false;
         }
 
         player.getAbilities().mayfly = enable;
