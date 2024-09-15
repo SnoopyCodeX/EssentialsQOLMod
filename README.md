@@ -10,4 +10,11 @@ Essentials QOL mod is a simple mod which adds a variety of helpful new commands 
 - /fly <on|off> [targetPlayer] - Enable flight for player
 - /heal [targetPlayer] - Heal player or heal a target player
 
+### Features
+- Tool Durability Notification - notifies you if your tool's durability reaches below the minimum threshold
+
+### Dependencies
+- [x] YetAnotherConfigLib (*required*)
+- [ ] ModMenu (*optional*)
+
 More features will be added as this is currently in development phase.

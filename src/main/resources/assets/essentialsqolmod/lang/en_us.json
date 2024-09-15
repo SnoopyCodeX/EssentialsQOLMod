@@ -1,0 +1,21 @@
+{
+  "_comment": "Config Name",
+  "text.autoconfig.essentialsqolmod.title": "EssentialsQOL Mod",
+
+  "_comment": "Warning Message",
+  "essentialsqolmod.durability.notifier.warning.part1": "Warning! %s",
+  "essentialsqolmod.durability.notifier.warning.part2": " has dropped below ",
+  "essentialsqolmod.durability.notifier.warning.part3": " durability threshold!",
+
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier": "Durability Notifier",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.general": "General",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.general.percentage": "Percentage",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.general.checkArmor": "Check Armor Durability",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.message": "Message",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.message.sendMessage": "Should send message when notified",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.message.messageColor": "Message Color",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.sound": "Notification Sound",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.sound.playSound": "Should play notification sound when notified",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.sound.soundLocation": "Sound Location",
+  "text.autoconfig.essentialsqolmod.option.durabilityNotifier.sound.volume": "Volume"
+}

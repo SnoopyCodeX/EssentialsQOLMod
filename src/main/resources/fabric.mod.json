@@ -17,6 +17,9 @@
     ],
     "main": [
       "ph.snoopycodex.essentialsqolmod.EssentialsQOLMod"
+    ],
+    "modmenu": [
+      "ph.snoopycodex.essentialsqolmod.config.EssentialsQOLModMenuImpl"
     ]
   },
   "mixins": [
@@ -26,6 +29,8 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "fabric-permissions-api-v0": "*"
+    "fabric-permissions-api-v0": ">=${fabric_permissions_api_version}",
+    "cloth-config": ">=${cloth_config_api_version}",
+    "yet_another_config_lib_v3": ">=${yacl_api_version}"
   }
 }
