@@ -14,7 +14,7 @@ public class Durability {
             return EssentialsQOLModConfig.durabilityNotifier.general.percentage;
        }
 
-       public static boolean shouldSendMessageWhenNotified() {
+       public static boolean shouldShowMessageWhenNotified() {
            return EssentialsQOLModConfig.durabilityNotifier.message.sendMessage;
        }
 
@@ -30,9 +30,9 @@ public class Durability {
            return (float) EssentialsQOLModConfig.durabilityNotifier.sound.volume;
        }
 
-        public static String getNotificationSoundLocation() {
+        /*public static String getNotificationSoundLocation() {
             return EssentialsQOLModConfig.durabilityNotifier.sound.soundLocation;
-        }
+        }*/
 
         public static SoundEvent getChosenNotificationSound() {
             ResourceLocation resourceLocation = ResourceLocation.tryParse(EssentialsQOLModConfig.durabilityNotifier.sound.soundLocation);
