@@ -13,9 +13,6 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import ph.snoopycodex.essentialsqolmod.EssentialsQOLMod;
 
-import java.awt.*;
-import java.util.Collections;
-
 public class EssentialsQOLModConfig {
     public static ConfigClassHandler<EssentialsQOLModConfig> HANDLER = ConfigClassHandler.createBuilder(EssentialsQOLModConfig.class)
         .id(ResourceLocation.fromNamespaceAndPath(EssentialsQOLMod.MOD_ID, "config"))
@@ -97,8 +94,8 @@ public class EssentialsQOLModConfig {
                 .group(OptionGroup.createBuilder()
                     .name(Component.literal("Message"))
                     .option(Option.<Boolean>createBuilder()
-                        .name(Component.literal("Send message when notified"))
-                        .description(OptionDescription.of(Component.literal("Should a message be sent when your tool reaches the threshold")))
+                        .name(Component.literal("Show message when notified"))
+                        .description(OptionDescription.of(Component.literal("Should a message be shown when your tool reaches the threshold")))
                         .binding(true, () -> durabilityNotifier.message.sendMessage, (newVal) -> durabilityNotifier.message.sendMessage = newVal)
                         .controller(TickBoxControllerBuilder::create)
                         .build()
@@ -106,7 +103,7 @@ public class EssentialsQOLModConfig {
                     .option(Option.<MessageColor>createBuilder()
                         .name(Component.literal("Message color"))
                         .description(OptionDescription.of(Component.literal("The color of the message that will be sent")))
-                        .binding(MessageColor.YELLOW, () -> MessageColor.valueOf(durabilityNotifier.message.messageColor), (newVal) -> durabilityNotifier.message.messageColor = newVal.toString())
+                        .binding(MessageColor.YELLOW, () -> MessageColor.valueOf(durabilityNotifier.message.messageColor.replaceAll(" ", "_")), (newVal) -> durabilityNotifier.message.messageColor = newVal.toString())
                         .controller(opt -> EnumControllerBuilder.create(opt)
                             .enumClass(MessageColor.class)
                         )
@@ -169,24 +166,7 @@ public class EssentialsQOLModConfig {
 
         @Override
         public Component getDisplayName() {
-            return switch(this) {
-                case BLACK -> Component.literal("BLACK");
-                case DARK_BLUE -> Component.literal("DARK_BLUE");
-                case DARK_GREEN -> Component.literal("DARK_GREEN");
-                case DARK_AQUA -> Component.literal("DARK_AQUA");
-                case DARK_RED -> Component.literal("DARK_RED");
-                case DARK_PURPLE -> Component.literal("DARK_PURPLE");
-                case GOLD -> Component.literal("GOLD");
-                case GRAY -> Component.literal("GRAY");
-                case DARK_GRAY -> Component.literal("DARK_GRAY");
-                case BLUE -> Component.literal("BLUE");
-                case GREEN -> Component.literal("GREEN");
-                case AQUA -> Component.literal("AQUA");
-                case RED -> Component.literal("RED");
-                case LIGHT_PURPLE -> Component.literal("LIGHT_PURPLE");
-                case YELLOW -> Component.literal("YELLOW");
-                case WHITE -> Component.literal("WHITE");
-            };
+            return Component.literal(this.toString().replaceAll("_", " ")).withStyle(ChatFormatting.getByName(this.toString()));
         }
     }
 }
