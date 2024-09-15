@@ -28,7 +28,6 @@ repositories {
         name = "Terraformers"
         url = "https://maven.terraformersmc.com/"
     }
-    maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -50,13 +49,8 @@ dependencies {
     // mod menu api
     modImplementation("com.terraformersmc:modmenu:${project.mod_menu_version}")
 
-    // cloth config api
-    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_api_version}") {
-        exclude (group: "net.fabricmc.fabric-api")
-    }
-
     // yacl api
-    modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_api_version}"
+    include(modImplementation("dev.isxander:yet-another-config-lib:${project.yacl_api_version}"))
 }
 
 processResources {
