@@ -21,8 +21,8 @@ public class DurabilityNotifierEventHandler {
     public static void checkDurability(ItemStack stack, Player playerIn, double durabilityThreshold) {
         if (stack != null && stack.isDamageableItem() && stack.getMaxDamage() != 0) {
             if (((double) stack.getDamageValue() / stack.getMaxDamage()) > durabilityThreshold) {
-                if (Durability.Notifier.shouldSendMessageWhenNotified()) {
-                    sendMessage(playerIn, stack);
+                if (Durability.Notifier.shouldShowMessageWhenNotified()) {
+                    showMessage(playerIn, stack);
                 }
 
                 if (Durability.Notifier.shouldPlayNotificationSound() && CooldownUtil.isNotOnCooldown(stack, 500L)) {
@@ -32,7 +32,7 @@ public class DurabilityNotifierEventHandler {
         }
     }
 
-    public static void sendMessage(Player player, ItemStack stack) {
+    public static void showMessage(Player player, ItemStack stack) {
         ChatFormatting messageColor = Durability.Notifier.getMessageColor();
         if (messageColor == null) {
             EssentialsQOLMod.LOGGER.warn("Invalid chat color in config, please check the config!");
